@@ -1,0 +1,128 @@
+--- automake-1.6.3/Makefile.in.info16	2002-07-28 19:18:28.000000000 +0200
++++ automake-1.6.3/Makefile.in	2007-03-22 14:47:20.000000000 +0100
+@@ -81,15 +81,15 @@
+ SUBDIRS = . m4 lib tests
+ 
+ bin_SCRIPTS = automake aclocal
+-info_TEXINFOS = automake.texi
++info_TEXINFOS = automake16.texi
+ 
+ TAGS_FILES = automake.in aclocal.in
+ 
+ # The following requires a fixed version of the Emacs 19.30 etags.
+ ETAGS_ARGS = --lang=none \
+- --regex='/^@node[ \t]+\([^,]+\)/\1/' $(srcdir)/automake.texi
++ --regex='/^@node[ \t]+\([^,]+\)/\1/' $(srcdir)/automake16.texi
+ 
+-TAGS_DEPENDENCIES = automake.texi
++TAGS_DEPENDENCIES = automake16.texi
+ 
+ EXTRA_DIST = ChangeLog.1996 ChangeLog.1998 ChangeLog.2000 ChangeLog.2001
+ 
+@@ -106,9 +106,9 @@
+ 
+ DIST_SOURCES =
+ TEXINFO_TEX = $(top_srcdir)/lib/texinfo.tex
+-INFO_DEPS = automake.info
++INFO_DEPS = automake16.info
+-DVIS = automake.dvi
++DVIS = automake16.dvi
+-TEXINFOS = automake.texi
++TEXINFOS = automake16.texi
+ 
+ RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
+ 	uninstall-info-recursive all-recursive install-data-recursive \
+@@ -166,8 +166,8 @@
+ 
+ $(srcdir)/version.texi:  $(srcdir)/stamp-vti
+ 	@:
+-$(srcdir)/stamp-vti: automake.texi $(top_srcdir)/configure.in
+-	@(set `$(SHELL) $(top_srcdir)/lib/mdate-sh $(srcdir)/automake.texi`; \
++$(srcdir)/stamp-vti: automake16.texi $(top_srcdir)/configure.in
++	@(set `$(SHELL) $(top_srcdir)/lib/mdate-sh $(srcdir)/automake16.texi`; \
+ 	echo "@set UPDATED $$1 $$2 $$3"; \
+ 	echo "@set UPDATED-MONTH $$2 $$3"; \
+ 	echo "@set EDITION $(VERSION)"; \
+@@ -184,8 +184,8 @@
+ maintainer-clean-vti:
+ 	-rm -f $(srcdir)/stamp-vti $(srcdir)/version.texi
+ 
+-automake.info: automake.texi $(srcdir)/version.texi
+-automake.dvi: automake.texi $(srcdir)/version.texi
++automake16.info: automake16.texi $(srcdir)/version.texi
++automake16.dvi: automake16.texi $(srcdir)/version.texi
+ 
+ .texi.info:
+ 	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+@@ -241,10 +241,10 @@
+ 	done
+ 
+ mostlyclean-aminfo:
+-	-rm -f automake.aux automake.cm automake.cp automake.cps automake.cv \
+-	  automake.dvi automake.fn automake.ky automake.log automake.op \
+-	  automake.ov automake.pg automake.ps automake.tmp automake.toc \
+-	  automake.tp automake.tr automake.vr automake.vrs
++	-rm -f automake16.aux automake16.cm automake16.cp automake16.cps automake16.cv \
++	  automake16.dvi automake16.fn automake16.ky automake16.log automake16.op \
++	  automake16.ov automake16.pg automake16.ps automake16.tmp automake16.toc \
++	  automake16.tp automake16.tr automake16.vr automake16.vrs
+ 
+ maintainer-clean-aminfo:
+ 	cd $(srcdir) && \
+--- automake-1.6.3/automake.texi.info16	2002-07-16 23:14:57.000000000 +0200
++++ automake-1.6.3/automake.texi	2007-03-22 14:44:25.000000000 +0100
+@@ -1,7 +1,7 @@
+ \input texinfo   @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename automake.info
+-@settitle automake
++@setfilename automake16.info
++@settitle automake16
+ @setchapternewpage off
+ @c %**end of header
+ 
+@@ -9,12 +9,12 @@
+ 
+ @dircategory GNU programming tools
+ @direntry
+-* automake: (automake).		Making Makefile.in's
++* automake16: (automake16).		Making Makefile.in's
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
++* aclocal-1.6: (automake16)Invoking aclocal.          Generating aclocal.m4
+ @end direntry
+ 
+ @ifinfo
+@@ -4266,7 +4266,7 @@
+ 
+ @example
+ ETAGS_ARGS = automake.in --lang=none \
+- --regex='/^@@node[ \t]+\([^,]+\)/\1/' automake.texi
++ --regex='/^@@node[ \t]+\([^,]+\)/\1/' automake16.texi
+ @end example
+ 
+ If you add filenames to @samp{ETAGS_ARGS}, you will probably also
+--- automake-1.6.3/Makefile.am.info16	2002-07-23 18:58:13.000000000 +0200
++++ automake-1.6.3/Makefile.am	2007-03-22 14:44:25.000000000 +0100
+@@ -24,15 +24,15 @@
+ SUBDIRS = . m4 lib tests
+ 
+ bin_SCRIPTS = automake aclocal
+-info_TEXINFOS = automake.texi
++info_TEXINFOS = automake16.texi
+ 
+ 
+ TAGS_FILES = automake.in aclocal.in
+ 
+ # The following requires a fixed version of the Emacs 19.30 etags.
+ ETAGS_ARGS = --lang=none \
+- --regex='/^@node[ \t]+\([^,]+\)/\1/' $(srcdir)/automake.texi
+-TAGS_DEPENDENCIES = automake.texi
++ --regex='/^@node[ \t]+\([^,]+\)/\1/' $(srcdir)/automake16.texi
++TAGS_DEPENDENCIES = automake16.texi
+ 
+ EXTRA_DIST = ChangeLog.1996 ChangeLog.1998 ChangeLog.2000 ChangeLog.2001
+ 

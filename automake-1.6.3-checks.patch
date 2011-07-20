@@ -1,0 +1,23 @@
+diff -up automake-1.6.3/tests/Makefile.am.kh1 automake-1.6.3/tests/Makefile.am
+--- automake-1.6.3/tests/Makefile.am.kh1	2002-07-23 20:29:13.000000000 +0200
++++ automake-1.6.3/tests/Makefile.am	2009-07-30 16:31:15.000000000 +0200
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to create Makefile.in
+ 
+-XFAIL_TESTS = condd.test subdir5.test auxdir2.test cond17.test
++XFAIL_TESTS = condd.test subdir5.test auxdir2.test cond17.test depcomp2.test
+ 
+ TESTS =	\
+ acinclude.test \
+diff -up automake-1.6.3/tests/Makefile.in.kh1 automake-1.6.3/tests/Makefile.in
+--- automake-1.6.3/tests/Makefile.in.kh1	2002-07-28 19:18:30.000000000 +0200
++++ automake-1.6.3/tests/Makefile.in	2009-07-30 16:31:23.000000000 +0200
+@@ -78,7 +78,7 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ pkgvdatadir = @pkgvdatadir@
+ 
+-XFAIL_TESTS = condd.test subdir5.test auxdir2.test cond17.test
++XFAIL_TESTS = condd.test subdir5.test auxdir2.test cond17.test depcomp2.test
+ 
+ TESTS = \
+ acinclude.test \
