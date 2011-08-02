@@ -19,6 +19,8 @@ $(SOURCEFILES):
 	    $(CLIENT) $(LOOKASIDE_URI)/$(NAME)/$${sourcefile}; \
 	done
 
+	chmod +x *automake.sh
+
 	sha256sum -c sources || ( echo 'SHA256 check failed' && rm $(SOURCEFILES); exit 1 )
 
 clean:
